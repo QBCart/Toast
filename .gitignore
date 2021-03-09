@@ -1,9 +1,12 @@
 node_modules
+.npmrc
 
 # snowpack output
 build
+.snowpack
+
+# typescript output
 dist
-.npmrc
 
 # Apple Snooping File
 .DS_Store
