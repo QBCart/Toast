@@ -1,0 +1,21 @@
+{
+  "name": "@qbcart/toast",
+  "version": "1.0.0",
+  "description": "Toast component used across the QBCart UI ecosystem.",
+  "author": "QBCart Inc.",
+  "contributors": [
+    "Allan Mobley",
+    "Michael Shea"
+  ],
+  "main": "index.js",
+  "module": "index.js",
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QBCart/Toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/QBCart/Toast/issues"
+  },
+  "homepage": "https://github.com/QBCart/Toast#readme"
+}
