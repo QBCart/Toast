@@ -6,7 +6,7 @@ module.exports = {
     mount: {
       src: { url: "/", resolve: true, static: false }
     },
-    plugins: [],
+    plugins: ['@snowpack/plugin-sass', { compilerOptions: { loadPath: 'node_modules' } }],
     packageOptions: {
       source: "remote",
       types: true,
