@@ -12,50 +12,35 @@ import React, {
   } from 'https://cdn.skypack.dev/pin/react@v17.0.1-tOtrZxBRexARODgO0jli/min/react.js';
   
   interface Props {
+    id: string;
     imagesStorageUrl: string;
   }
   
   const Toast: FC<Props> = (props) => {
-
-    const id = 'qbc-toast'
-
     const [message, setMessage] = useState('');
     const [textColorClass, setTextColorClass] = useState('');
-    const [delay, setDelay] = useState(1000);
-
-    useEffect(() => {
-      $(`#${id}`).toast();
-    }, []);
   
     useEffect(() => {
-      $(`#${id}`).on('show.bs.toast', function (e) {
+      $(`#${props.id}-component`).on('show.bs.toast', function (e) {
         setMessage($(e.currentTarget).data('message'));
         setTextColorClass($(e.currentTarget).data('text-color-class'));
-        setDelay($(e.currentTarget).data('delay'));
       });
       
     }, []);
   
-    // useEffect(() => {
-    //   $(`#${id}`).on('hidden.bs.toast', function () {
-    //     setMessage('');
-    //     setTextColorClass('');
-    //   });
-    // }, []);
-  
     return (
       <div
-        id={`#${id}-container`}
+        id={`${props.id}-container`}
         aria-live="assertive"
         aria-atomic="true"
       >
         <div
-          id={id}
+          id={`${props.id}-component`}
           className="toast"
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
-          data-delay={ delay }
+          data-delay="1000"
         >
           <div className="toast-header">
             <img
@@ -64,7 +49,7 @@ import React, {
               width="18"
             />
             <strong className="ml-1 mr-auto">Cart</strong>
-            <small>Just now</small>
+            <small className="ml-3">Just now</small>
             <button
               type="button"
               className="ml-2 mb-1 close"
