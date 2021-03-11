@@ -20,16 +20,28 @@ const mountToast = () => {
   );
 };
 
+/**
+ * @param {number}  duration - Number between 2 and 5. Everything outside will default to min or max.
+ */
 const showToast = (
-  message: string,
-  textColorClass: string,
-  timeToLive: number
+  header: string,
+  body: string,
+  duration: number = 3.5
 ) => {
-  const toast = $(`#${id}-component`);
-  toast.data("message", message);
-  toast.data("text-color-class", textColorClass);
-  toast.data("delay", timeToLive);
-  toast.toast("show");
+  const toastMountDiv = document.getElementById(id)! 
+  toastMountDiv.querySelector('.qbc-toast-header strong')!.textContent = header;
+  toastMountDiv.querySelector('.qbc-toast-body')!.innerHTML = body;
+
+  if(duration < 2) {
+    duration = 2
+  } else if (duration > 5) {
+    duration = 5
+  }
+
+  toastMountDiv.setAttribute('style', `animation-duration: ${duration}s;`)
+  toastMountDiv.classList.remove('qbc-toast-hidden')
+  toastMountDiv.classList.add('qbc-toast-animation')
+
   console.log("show toast");
 };
 
