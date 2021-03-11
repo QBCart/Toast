@@ -5,15 +5,15 @@ import React, {
 import { render } from 'https://cdn.skypack.dev/pin/react-dom@v17.0.1-DtIXT56q6U8PbgLMrBhE/min/react-dom.js';
 
 interface Props {
-  showToast: (message: string, textColorClass: string, timeToLive: number) => void
+  showToast: (header: string, body: string, duration: number) => void
 }
 
 const DevButton: FC<Props> = (props) => {
-  return <button onClick={() => props.showToast('Booya!', 'text-success', 5000)}>Show Toast</button>;
+  return <button onClick={() => props.showToast('Cart', '<span class="text-success">Item has been added to your cart</span>')}>Show Toast</button>;
 };
 
 
-const mountDevButton = (showToast: (message: string, textColorClass: string, timeToLive: number) => void) => {
+const mountDevButton = (showToast: (header: string, body: string, duration: number) => void) => {
   render(
     <DevButton showToast={showToast} />,
     document.getElementById('dev-button')
