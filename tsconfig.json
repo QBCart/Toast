@@ -1,34 +1,29 @@
 {
-    "compilerOptions": {
-      "module": "esnext",
-      "target": "esnext",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "baseUrl": "./",
-      "rootDir": "src",
-      "outDir": "dist",
-      "paths": {
-        "*": [".snowpack/types/*", "skypack.d.ts"]
-      },
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "importsNotUsedAsValues": "error",
-      "allowJs": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noFallthroughCasesInSwitch": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "jsx": "react"
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./",
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "*": [".snowpack/types/*", "skypack.d.ts"]
     },
-    "include": ["src"]
-  }
-  
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "importsNotUsedAsValues": "error",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": ["src"]
+}

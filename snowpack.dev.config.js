@@ -3,17 +3,15 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-    mount: {
-      src: { url: "/src", resolve: true, static: false },
-      dev: { url: "/", resolve: true, static: false },
-    },
-    plugins: ['@snowpack/plugin-sass'],
-    packageOptions: {
-      source: "remote",
-      types: true,
-      
-    },
-    devOptions: {},
-    buildOptions: {}
-  };
-  
+  mount: {
+    src: { url: '/src', resolve: true, static: false },
+    dev: { url: '/', resolve: true, static: false }
+  },
+  plugins: ['@snowpack/plugin-sass'],
+  packageOptions: {
+    source: 'remote',
+    types: true
+  },
+  devOptions: {},
+  buildOptions: {}
+};

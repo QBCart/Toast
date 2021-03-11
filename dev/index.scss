@@ -1,23 +1,23 @@
 @use '../src/index';
 body {
-    background: grey;
+  background: grey;
 }
 .app-bar {
-    display: block;
-    height: 64px;
-    width: 100%;
-    background: black;
+  display: block;
+  height: 64px;
+  width: 100%;
+  background: black;
 }
 
 .nemesis {
-    display: block;
-    position: fixed;
-    height: 200px;
-    width: 100%;
-    background: red;
-    z-index: 1000;
+  display: block;
+  position: fixed;
+  height: 200px;
+  width: 100%;
+  background: red;
+  z-index: 1000;
 }
 
 button {
-    margin-top: 300px;
+  margin-top: 300px;
 }
