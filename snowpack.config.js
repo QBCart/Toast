@@ -4,21 +4,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    src: { url: '/', resolve: true, static: false }
+    src: { url: '/src', resolve: true, static: false },
+    dev: { url: '/', resolve: true, static: false }
   },
-  plugins: [
-    '@snowpack/plugin-sass',
-    { compilerOptions: { loadPath: 'node_modules' } }
-  ],
+  plugins: ['@snowpack/plugin-sass'],
   packageOptions: {
     source: 'remote',
     types: true
   },
   devOptions: {},
-  buildOptions: {},
-  optimize: {
-    bundle: false,
-    minify: false,
-    target: 'es2020'
-  }
+  buildOptions: {}
 };
