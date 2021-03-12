@@ -8,6 +8,6 @@
 
 # Toast
 
-Toast component used across the QBCart UI ecosystem.
+Toast component used across the QBCart UI ecosystem. A
 
 ###### Copyright (c) 2020 QBCart Inc. All rights reserved.
