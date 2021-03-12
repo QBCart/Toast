@@ -37,8 +37,6 @@ const showToast = (header: string, body: string, duration: number = 3.5) => {
   toastMountDiv.setAttribute('style', `animation-duration: ${duration}s;`);
   toastMountDiv.classList.remove('qbc-toast-hidden');
   toastMountDiv.classList.add('qbc-toast-animation');
-
-  console.log('show toast');
 };
 
 export { mountToast, showToast };

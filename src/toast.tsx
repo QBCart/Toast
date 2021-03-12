@@ -20,7 +20,6 @@ const Toast: FC<Props> = (props: Props) => {
     toast.addEventListener('animationend', () => {
       toast.classList.remove('qbc-toast-animation');
       toast.classList.add('qbc-toast-hidden');
-      console.log('Animation ended');
     });
   }, []);
 
