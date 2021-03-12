@@ -14,7 +14,7 @@ interface Props {
   imagesStorageUrl: string;
 }
 
-const Toast: FC<Props> = (props) => {
+const Toast: FC<Props> = (props: Props) => {
   useEffect(() => {
     const toast = document.getElementById(props.id)!;
     toast.addEventListener('animationend', () => {
