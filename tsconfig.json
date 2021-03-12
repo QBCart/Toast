@@ -5,7 +5,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./",
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": "build",
     "paths": {
       "*": [".snowpack/types/*"],
       "https*": ["skypack.d.ts"]
@@ -20,7 +20,7 @@
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "dist/types",
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,

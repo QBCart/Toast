@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/QBCart/Toast#readme",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "rimraf dist && tsc",
+    "start": "snowpack dev --config snowpack.dev.config.js",
+    "build": "snowpack build && tsc",
     "lint": "echo \"All Good\" && exit 0",
     "format:check": "prettier --check .",
     "format:fix": "prettier . --write",
@@ -32,7 +32,6 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
     "snowpack": "^3.0.13",
     "typescript": "^4.2.3"
   },

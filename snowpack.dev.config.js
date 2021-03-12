@@ -4,7 +4,8 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    src: { url: '/', resolve: true, static: false }
+    src: { url: '/src', resolve: true, static: false },
+    dev: { url: '/', resolve: true, static: false }
   },
   plugins: ['@snowpack/plugin-sass'],
   packageOptions: {
@@ -12,7 +13,5 @@ module.exports = {
     types: true
   },
   devOptions: {},
-  buildOptions: {
-    out: 'dist'
-  }
+  buildOptions: {}
 };
