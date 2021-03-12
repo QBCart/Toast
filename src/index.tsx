@@ -4,8 +4,6 @@
  * This code can only be used and/or distributed with express permission.
  */
 
-// React import is needed by snowpack even though typescript suggests otherwise
-// @ts-ignore
 import React from 'https://cdn.skypack.dev/pin/react@v17.0.1-tOtrZxBRexARODgO0jli/min/react.js';
 import { render } from 'https://cdn.skypack.dev/pin/react-dom@v17.0.1-DtIXT56q6U8PbgLMrBhE/min/react-dom.js';
 import Toast from './toast';
@@ -21,6 +19,8 @@ const mountToast = () => {
 };
 
 /**
+ * @param {string} header - Small text header for the toast
+ * @param {string} body - Can be text or html string - changes the body text of the toast
  * @param {number}  duration - Number between 2 and 5. Everything outside will default to min or max.
  */
 const showToast = (header: string, body: string, duration: number = 3.5) => {
