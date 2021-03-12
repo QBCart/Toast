@@ -22,7 +22,7 @@
     "start": "snowpack dev --config snowpack.dev.config.js",
     "build": "snowpack build",
     "format: check": "prettier --check .",
-    "format: fix": "prettier --write .",
+    "format: fix": "prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
 
   "lint-staged": {
     "!.*": [
-      "prettier --write"
+      "prettier . --write"
     ]
   }
 }
