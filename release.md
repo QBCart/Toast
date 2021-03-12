@@ -6,7 +6,7 @@
 
 # Fixes
 
-- none
+- added missing css
 
 # Breaking
 
