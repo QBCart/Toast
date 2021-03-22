@@ -1,20 +1,18 @@
-// React import is needed by snowpack even though typescript suggests otherwise
-import React, {
-  FC
-} from 'https://cdn.skypack.dev/pin/react@v17.0.1-tOtrZxBRexARODgO0jli/min/react.js';
-import { render } from 'https://cdn.skypack.dev/pin/react-dom@v17.0.1-DtIXT56q6U8PbgLMrBhE/min/react-dom.js';
+import { React } from 'https://cdn.skypack.dev/@qbcart/eshop-skypack';
+import { render } from 'https://cdn.skypack.dev/@qbcart/eshop-skypack';
 
 interface Props {
   showToast: (header: string, body: string, duration: number) => void;
 }
 
-const DevButton: FC<Props> = (props) => {
+const DevButton: React.FC<Props> = (props: Props) => {
   return (
     <button
       onClick={() =>
         props.showToast(
           'Cart',
-          '<span class="text-success">Item has been added to your cart</span>'
+          '<span class="text-success">Item has been added to your cart</span>',
+          3.5
         )
       }
     >

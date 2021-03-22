@@ -4,18 +4,15 @@
  * This code can only be used and/or distributed with express permission.
  */
 
-import React, {
-  FC,
-  useEffect
-} from 'https://cdn.skypack.dev/pin/react@v17.0.1-tOtrZxBRexARODgO0jli/min/react.js';
+import { React } from 'https://cdn.skypack.dev/@qbcart/eshop-skypack';
 
 interface Props {
   id: string;
   imagesStorageUrl: string;
 }
 
-const Toast: FC<Props> = (props: Props) => {
-  useEffect(() => {
+const Toast: React.FC<Props> = (props: Props) => {
+  React.useEffect(() => {
     const toast = document.getElementById(props.id)!;
     toast.addEventListener('animationend', () => {
       toast.classList.remove('qbc-toast-animation');
