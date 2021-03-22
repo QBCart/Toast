@@ -2,11 +2,11 @@
 
 # New
 
-- Toast component used across the QBCart UI ecosystem.
+- none
 
 # Fixes
 
-- added missing css
+- updated to use new Skypack package
 
 # Breaking
 
