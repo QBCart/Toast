@@ -9,8 +9,7 @@ module.exports = {
   },
   plugins: ['@snowpack/plugin-sass'],
   packageOptions: {
-    source: 'remote',
-    types: true
+    source: 'local'
   },
   devOptions: {},
   buildOptions: {}
