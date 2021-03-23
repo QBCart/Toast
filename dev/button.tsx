@@ -1,5 +1,7 @@
-import { React } from 'https://cdn.skypack.dev/@qbcart/eshop-skypack';
-import { render } from 'https://cdn.skypack.dev/@qbcart/eshop-skypack';
+import {
+  React,
+  render
+} from 'https://cdn.skypack.dev/@qbcart/eshop-skypack-deps';
 
 interface Props {
   showToast: (header: string, body: string, duration: number) => void;
