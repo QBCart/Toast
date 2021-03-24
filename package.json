@@ -2,6 +2,13 @@
   "name": "@qbcart/toast",
   "version": "1.0.0",
   "description": "Toast component used across the QBCart UI ecosystem.",
+  "keywords": [
+    "skypack",
+    "deps",
+    "qbcart",
+    "eshop"
+  ],
+  "license": "MIT",
   "author": "QBCart Inc.",
   "contributors": [
     "Allan Mobley",
@@ -10,6 +17,9 @@
   "main": "index.js",
   "module": "index.js",
   "types": "types/index.d.ts",
+  "exports": {
+    "import": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/QBCart/Toast.git"
