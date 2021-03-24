@@ -12,7 +12,7 @@ import Toast from './toast';
 
 const id = 'qbc-toast';
 
-const mountToast = () => {
+const mountToast = (): void => {
   const toast = document.getElementById(id);
   render(
     <Toast id={id} imagesStorageUrl={toast!.dataset.imagesStorageUrl!} />,
@@ -25,7 +25,7 @@ const mountToast = () => {
  * @param {string} body - Can be text or html string - changes the body text of the toast
  * @param {number}  duration - Number between 2 and 5. Everything outside will default to min or max.
  */
-const showToast = (header: string, body: string, duration: number = 3.5) => {
+const showToast = (header: string, body: string, duration = 3.5): void => {
   const toastMountDiv = document.getElementById(id)!;
   toastMountDiv.querySelector('.qbc-toast-header strong')!.textContent = header;
   toastMountDiv.querySelector('.qbc-toast-body')!.innerHTML = body;

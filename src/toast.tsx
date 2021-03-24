@@ -18,7 +18,7 @@ const Toast: React.FC<Props> = (props: Props) => {
       toast.classList.remove('qbc-toast-animation');
       toast.classList.add('qbc-toast-hidden');
     });
-  }, []);
+  }, [props.id]);
 
   return (
     <div
