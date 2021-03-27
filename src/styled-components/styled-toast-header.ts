@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../streaming-imports';
 
 const StyledToastHeader = styled.div`
   display: -ms-flexbox;

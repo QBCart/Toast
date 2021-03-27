@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
@@ -6,12 +7,37 @@ module.exports = {
   mount: {
     src: { url: '/', resolve: true, static: false }
   },
-  plugins: [],
   packageOptions: {
     source: 'local'
   },
   devOptions: {},
   buildOptions: {
-    out: 'dist'
-  }
+    out: 'dist',
+    sourcemap: false,
+    clean: true,
+    metaUrlPath: '.'
+  },
+  optimize: {
+    target: 'es2020',
+    minify: true,
+    sourcemap: false,
+    bundle: false
+  },
+  // prettier-ignore
+  plugins: [
+    [
+      'snowpack-plugin-import-map',
+      {
+        // map of packages to imports (required)
+        imports: {
+          // specify the exact URL to load the dependency from
+          '@react': '../deps/react.js',
+          'react-dom': '../deps/react-dom.js',
+          'styled-components': '../deps/styled-components.js',
+        },
+        // if true, import-map transforms imports in development mode too. default: false.
+        dev: false
+      }
+    ]
+  ]
 };

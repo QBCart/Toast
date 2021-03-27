@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import { styled, keyframes } from '../streaming-imports';
 
 const ToastSlideRight = keyframes`
   0% {

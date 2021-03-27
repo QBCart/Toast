@@ -4,7 +4,7 @@
  * This code can only be used and/or distributed with express permission.
  */
 
-import React from 'react';
+import { React } from './streaming-imports';
 import StyledToast from './styled-components/styled-toast';
 import StyledToastBody from './styled-components/styled-toast-body';
 import StyledToastHeader from './styled-components/styled-toast-header';
