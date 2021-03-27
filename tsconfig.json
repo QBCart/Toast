@@ -5,7 +5,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./",
     "rootDir": "src",
-    "outDir": "build",
     "paths": {
       "https://cdn.skypack.dev/@qbcart/eshop-skypack-deps": ["skypack.d.ts"]
     },
@@ -19,6 +18,7 @@
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
     "sourceMap": false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
