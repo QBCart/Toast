@@ -5,7 +5,9 @@
  */
 
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import StyledToast from './styled-components/styled-toast';
+import StyledToastBody from './styled-components/styled-toast-body';
+import StyledToastHeader from './styled-components/styled-toast-header';
 
 interface Props {
   id: string;
@@ -22,71 +24,9 @@ const Toast: React.FC<Props> = (props: Props) => {
     });
   }, [props.id]);
 
-  const ToastSlideRight = keyframes`
-    0% {
-    top: 70px;
-    right: -350px;
-    display: block;
-    }
-    25% {
-      top: 70px;
-      right: 6px;
-    }
-    75% {
-      top: 70px;
-      right: 6px;
-    }
-    100% {
-      top: 70px;
-      display: none;
-    }
-  `;
-
-  const StyleToast = styled.div`
-    --toastSlideRight: ${ToastSlideRight};
-    -ms-flex-preferred-size: 350px;
-    flex-basis: 350px;
-    min-width: 200px;
-    max-width: 350px;
-    font-size: 0.875rem;
-    background-color: rgba(255, 255, 255, 0.85);
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
-    border-radius: 0.25rem;
-
-    position: fixed;
-    top: 70px;
-    right: -350px;
-    z-index: 2000;
-    animation-name: '';
-    animation-timing-function: ease-in-out;
-    animation-delay: 1s;
-  `;
-
-  const StyleToastHeader = styled.div`
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0.25rem 0.75rem;
-    color: #6c757d;
-    background-color: rgba(255, 255, 255, 0.85);
-    background-clip: padding-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-  `;
-
-  const StyleToastBody = styled.div`
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.75rem;
-  `;
-
   return (
-    <StyleToast role="alert" aria-live="assertive" aria-atomic="true">
-      <StyleToastHeader id={`${props.id}-header`}>
+    <StyledToast role="alert" aria-live="assertive" aria-atomic="true">
+      <StyledToastHeader id={`${props.id}-header`}>
         <img
           src={`${props.imagesStorageUrl}images/favicon.ico`}
           alt="company logo"
@@ -94,9 +34,9 @@ const Toast: React.FC<Props> = (props: Props) => {
         />
         <strong className="ml-1 mr-auto"></strong>
         <small className="ml-3">Just now</small>
-      </StyleToastHeader>
-      <StyleToastBody id={`${props.id}-body`}></StyleToastBody>
-    </StyleToast>
+      </StyledToastHeader>
+      <StyledToastBody id={`${props.id}-body`}></StyledToastBody>
+    </StyledToast>
   );
 };
 
