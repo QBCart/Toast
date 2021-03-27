@@ -33,7 +33,7 @@ module.exports = {
           // specify the exact URL to load the dependency from
           '@react': '../deps/react.js',
           'react-dom': '../deps/react-dom.js',
-          'styled-components': '../deps/styled-components.js',
+          '@styled-components': '../deps/styled-components.js',
         },
         // if true, import-map transforms imports in development mode too. default: false.
         dev: false

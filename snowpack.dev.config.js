@@ -17,6 +17,7 @@ module.exports = {
   alias: {
     '@react': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react.js',
     'react-dom': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react-dom.js',
-    'styled-components': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/styled-components.js'
+    '@styled-components': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/styled-components.js',
+    'toast': './src/index'
   }
 };

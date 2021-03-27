@@ -7,7 +7,7 @@ module.exports = {
   mount: {
     dev: { url: '/', resolve: true, static: false }
   },
-  plugins: [],
+  plugins: ['@snowpack/plugin-sass'],
   packageOptions: {
     source: 'local'
   },
@@ -17,6 +17,7 @@ module.exports = {
   alias: {
     '@react': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react.js',
     'react-dom': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react-dom.js',
-    'styled-components': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/styled-components.js'
+    '@styled-components': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/styled-components.js',
+    'toast': 'https://qbcdemo.z13.web.core.windows.net/eshop/toast.js'
   }
 };
