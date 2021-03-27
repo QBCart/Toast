@@ -1,10 +1,10 @@
+/* eslint-disable */
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    src: { url: '/src', resolve: true, static: false },
     dev: { url: '/', resolve: true, static: false }
   },
   plugins: ['@snowpack/plugin-sass'],
@@ -18,6 +18,6 @@ module.exports = {
     '@react': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react.js',
     'react-dom': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/react-dom.js',
     '@styled-components': 'https://qbcdemo.z13.web.core.windows.net/eshop/deps/styled-components.js',
-    'toast': './src/index'
+    'toast': 'https://qbcdemo.z13.web.core.windows.net/eshop/toast.js'
   }
 };

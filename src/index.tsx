@@ -4,10 +4,7 @@
  * This code can only be used and/or distributed with express permission.
  */
 
-import {
-  React,
-  render
-} from 'https://cdn.skypack.dev/@qbcart/eshop-skypack-deps';
+import { React, render } from './streaming-imports';
 import Toast from './toast';
 
 const id = 'qbc-toast';
@@ -27,8 +24,8 @@ const mountToast = (): void => {
  */
 const showToast = (header: string, body: string, duration = 3.5): void => {
   const toastMountDiv = document.getElementById(id)!;
-  toastMountDiv.querySelector('.qbc-toast-header strong')!.textContent = header;
-  toastMountDiv.querySelector('.qbc-toast-body')!.innerHTML = body;
+  toastMountDiv.querySelector('#qbc-toast-header strong')!.textContent = header;
+  toastMountDiv.querySelector('#qbc-toast-body')!.innerHTML = body;
 
   if (duration < 2) {
     duration = 2;
@@ -36,9 +33,9 @@ const showToast = (header: string, body: string, duration = 3.5): void => {
     duration = 5;
   }
 
-  toastMountDiv.setAttribute('style', `animation-duration: ${duration}s;`);
-  toastMountDiv.classList.remove('qbc-toast-hidden');
-  toastMountDiv.classList.add('qbc-toast-animation');
+  const toast = toastMountDiv.querySelector('div')!;
+  toast.style.animationDuration = `${duration}s`;
+  toast.style.animationName = 'var(--toastSlideRight)';
 };
 
 export { mountToast, showToast };

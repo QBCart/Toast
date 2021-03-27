@@ -1,4 +1,4 @@
-import { mountToast, showToast } from '../src/index';
+import { mountToast, showToast } from 'toast';
 import mountDevButton from './button';
 
 mountToast();

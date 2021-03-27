@@ -30,7 +30,9 @@
   "homepage": "https://github.com/QBCart/Toast#readme",
   "scripts": {
     "start": "snowpack dev --config snowpack.dev.config.js",
-    "build": "snowpack build && tsc",
+    "build": "snowpack build",
+    "build:types": "tsc",
+    "demo": "snowpack dev --config snowpack.demo.config.js",
     "lint": "eslint src/**/*.tsx",
     "format:check": "prettier --check .",
     "format:fix": "prettier . --write",
@@ -41,6 +43,7 @@
     "@snowpack/plugin-sass": "^1.4.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
@@ -49,7 +52,11 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "snowpack": "^3.1.2",
+    "snowpack-plugin-import-map": "^1.1.4",
+    "styled-components": "^5.2.1",
     "typescript": "^4.2.3"
   },
   "husky": {
