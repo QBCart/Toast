@@ -5,7 +5,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    src: { url: '/', resolve: true, static: false }
+    src: { url: '/', resolve: false, static: false }
   },
   packageOptions: {
     source: 'local'
@@ -20,8 +20,13 @@ module.exports = {
   optimize: {
     target: 'es2020',
     minify: true,
-    sourcemap: false,
-    bundle: false
+    sourcemap: false
+  },
+  // prettier-ignore
+  alias: {
+    'react': '/deps/react.js',
+    'react-dom': '/deps/react-dom.js',
+    'styled-components': '/deps/styled-components.js'
   },
   // prettier-ignore
   plugins: [
@@ -31,13 +36,13 @@ module.exports = {
         // map of packages to imports (required)
         imports: {
           // specify the exact URL to load the dependency from
-          '@react': '../deps/react.js',
-          'react-dom': '../deps/react-dom.js',
-          '@styled-components': '../deps/styled-components.js',
+          'react': '/deps/react.js',
+          'react-dom': '/deps/react-dom.js',
+          'styled-components': '/deps/styled-components.js',
         },
         // if true, import-map transforms imports in development mode too. default: false.
         dev: false
       }
-    ]
+    ],
   ]
 };
