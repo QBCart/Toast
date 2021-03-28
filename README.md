@@ -10,4 +10,4 @@
 
 Toast component used across the QBCart UI ecosystem.
 
-###### Copyright (c) 2020 QBCart Inc. All rights reserved.
+###### Licensed under MIT - Copyright (c) 2021 QBCart Inc. All rights reserved.
