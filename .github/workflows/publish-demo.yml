@@ -87,4 +87,4 @@ jobs:
         shell: bash
         run: |
           az storage blob delete-batch --account-name ${{ env.DEMO_STORAGE_NAME }} --source $web --pattern eshop/toast/*
-          az storage blob upload-batch --account-name ${{ env.DEMO_STORAGE_NAME }} --source dist --destination $web/eshop/toast'
+          az storage blob upload-batch --account-name ${{ env.DEMO_STORAGE_NAME }} --source dist --destination $web/eshop/toast
