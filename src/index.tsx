@@ -12,13 +12,13 @@ import Toast from './toast.js';
 
 const id = 'qbc-toast';
 
-const mountToast = (): void => {
+(function () {
   const toast = document.getElementById(id);
   render(
     <Toast id={id} imagesStorageUrl={toast!.dataset.imagesStorageUrl!} />,
     toast
   );
-};
+})();
 
 /**
  * @param {string} header - Small text header for the toast
@@ -41,4 +41,4 @@ const showToast = (header: string, body: string, duration = 3.5): void => {
   toast.style.animationName = 'var(--toastSlideRight)';
 };
 
-export { mountToast, showToast };
+export { showToast };
