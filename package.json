@@ -40,7 +40,6 @@
     "test:ci": "echo \"All Good\" && exit 0"
   },
   "devDependencies": {
-    "@snowpack/plugin-sass": "^1.4.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",

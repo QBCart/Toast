@@ -7,7 +7,7 @@ module.exports = {
   mount: {
     dev: { url: '/', resolve: true, static: false }
   },
-  plugins: ['@snowpack/plugin-sass'],
+  plugins: [],
   packageOptions: {
     source: 'local'
   },
