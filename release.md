@@ -2,7 +2,10 @@
 
 ### New
 
-- none
+- ESM now deployed to storage account
+- External css no longer necessary (i.e., styled components)
+- All deps are streamed
+- Mounts automatically on js load
 
 ### Fixes
 
@@ -10,6 +13,7 @@
 
 ### Breaking
 
-- none
+- NPM package now only contains types.
+- No longer exports mount function.
 
 ###### Licensed under MIT - Copyright (c) 2021 QBCart Inc. All rights reserved.
