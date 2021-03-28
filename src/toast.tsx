@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import StyledToast from './styled-components/styled-toast';
-import StyledToastBody from './styled-components/styled-toast-body';
-import StyledToastHeader from './styled-components/styled-toast-header';
+import StyledToast from './styled-components/styled-toast.js';
+import StyledToastBody from './styled-components/styled-toast-body.js';
+import StyledToastHeader from './styled-components/styled-toast-header.js';
 
 interface Props {
   id: string;
