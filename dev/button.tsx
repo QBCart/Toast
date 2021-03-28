@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { render } from 'react-dom';
 
 interface Props {
   showToast: (header: string, body: string, duration: number) => void;
 }
 
-const DevButton: React.FC<Props> = (props: Props) => {
+const DevButton: FC<Props> = (props: Props) => {
   return (
     <button
       onClick={() =>

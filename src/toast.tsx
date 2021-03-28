@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source repo.
  */
 
-import React from 'react';
+import React, { FC, useEffect } from 'react';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
 import StyledToastHeader from './styled-components/styled-toast-header.js';
@@ -16,8 +16,8 @@ interface Props {
   imagesStorageUrl: string;
 }
 
-const Toast: React.FC<Props> = (props: Props) => {
-  React.useEffect(() => {
+const Toast: FC<Props> = (props: Props) => {
+  useEffect(() => {
     const toastMountDiv = document.getElementById(props.id)!;
     const toast = toastMountDiv.querySelector('div')!;
 
