@@ -1,14 +1,14 @@
-<img align="center" src="https://avatars2.githubusercontent.com/u/45455933" width="96" height="96" />
+# <img align="center" src="https://avatars2.githubusercontent.com/u/45455933" width="96" height="96" /> Toast
 
-# New
-
-- Toast component used across the QBCart UI ecosystem.
-
-# Fixes
+### New
 
 - none
 
-# Breaking
+### Fixes
+
+- none
+
+### Breaking
 
 - none
 
