@@ -1,4 +1,4 @@
-import { styled } from '../streaming-imports';
+import styled from 'styled-components';
 
 const StyledToastBody = styled.div`
   font-size: 1rem;

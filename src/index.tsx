@@ -4,7 +4,8 @@
  * This code can only be used and/or distributed with express permission.
  */
 
-import { React, render } from './streaming-imports';
+import React from 'react';
+import { render } from 'react-dom';
 import Toast from './toast';
 
 const id = 'qbc-toast';
