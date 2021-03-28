@@ -5,10 +5,10 @@ name: Demo
 ################################################
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
+    # branches:
+    #   - main
+    # paths:
+    #   - 'src/**'
 
 ###################
 # Set Global Envs #
@@ -85,4 +85,6 @@ jobs:
       - name: Deploy Component
         working-directory: .
         shell: bash
-        run: az storage blob upload-batch --account-name ${{ env.DEMO_STORAGE_NAME }} -s dist -d '$web\eshop\toast'
+        run: |
+          az storage blob delete --account-name ${{ env.DEMO_STORAGE_NAME }} -c '$web' -n 'eshop\toast'
+          az storage blob upload-batch --account-name ${{ env.DEMO_STORAGE_NAME }} -s dist -d '$web\eshop\toast'
