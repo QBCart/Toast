@@ -1,8 +1,8 @@
 name: Demo
 
-################################################
-# Triggers when changes occur in component/src #
-################################################
+######################################
+# Triggers when changes occur in src #
+######################################
 on:
   push:
     branches:
