@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Toast component used across the QBCart UI ecosystem.",
   "keywords": [
-    "skypack",
-    "deps",
+    "types",
     "qbcart",
     "eshop"
   ],
