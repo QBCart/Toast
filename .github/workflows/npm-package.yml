@@ -14,7 +14,7 @@ on:
 # Set Global Envs #
 ###################
 env:
-  node_version: '12'
+  node_version: '14'
 
 ############
 # Set Jobs #
