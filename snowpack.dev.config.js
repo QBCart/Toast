@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
