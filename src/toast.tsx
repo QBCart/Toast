@@ -7,6 +7,7 @@
  */
 
 import React, { FC, useEffect } from 'react';
+import { useAlerts } from '@qbcart/eshop-local-db';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
 import StyledToastHeader from './styled-components/styled-toast-header.js';
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const Toast: FC<Props> = (props: Props) => {
+  const alerts = useAlerts(true);
   useEffect(() => {
     const toastMountDiv = document.getElementById(props.id)!;
     const toast = toastMountDiv.querySelector('div')!;
