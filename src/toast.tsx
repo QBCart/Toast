@@ -20,16 +20,19 @@ interface Props {
 const Toast: FC<Props> = (props: Props) => {
   const alerts = useAlerts(true);
   useEffect(() => {
-    const toastMountDiv = document.getElementById(props.id)!;
-    const toast = toastMountDiv.querySelector('div')!;
-
+    const toast = document.getElementById(`${props.id}-content`)!;
     toast.addEventListener('animationend', () => {
       toast.style.animationName = '';
     });
   }, [props.id]);
 
   return (
-    <StyledToast role="alert" aria-live="assertive" aria-atomic="true">
+    <StyledToast
+      id={`${props.id}-content`}
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
       <StyledToastHeader id={`${props.id}-header`}>
         <img
           src={`${props.imagesStorageUrl}images/favicon.ico`}
