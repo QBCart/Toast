@@ -11,6 +11,7 @@ import { useAlerts, useRemoveAlert } from '@qbcart/eshop-local-db';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
 import StyledToastHeader from './styled-components/styled-toast-header.js';
+import StyledToastIcon from './styled-components/styled-toast-icon.js';
 
 interface Props {
   id: string;
@@ -41,8 +42,25 @@ const Toast: FC<Props> = (props: Props) => {
       toast.style.animationDuration = `${
         (alert.duration ?? 0) > 0 ? alert.duration : 2
       }s`;
+      toast.style.backgroundColor =
+        alert.bodyBackgroundColor ?? 'rgba(255, 255, 255, 0.85)';
+      toast.style.color = alert.bodyTextColor ?? 'black';
+
+      const header = toast.querySelector<HTMLDivElement>(
+        `#${props.id}-header`
+      )!;
+      header.style.color = alert.headerTextColor ?? '#6c757d';
+      header.style.backgroundColor =
+        alert.headerBackgroundColor ?? 'rgba(255, 255, 255, 0.85)';
+
+      if (alert.iconName) {
+        const icon = toast.querySelector<HTMLDivElement>(`#${props.id}-icon`)!;
+        icon.innerHTML = `<span class="material-icons" style="margin-top: -1px; color: ${
+          alert.iconColor ?? '#6c757d'
+        }">${alert.iconName}</span>`;
+      }
     }
-  }, [alert, ref]);
+  }, [alert, ref, props]);
 
   const onAnimationEnd = async (): Promise<void> => {
     const toast = ref.current!;
@@ -63,11 +81,14 @@ const Toast: FC<Props> = (props: Props) => {
       onAnimationEnd={() => onAnimationEnd()}
     >
       <StyledToastHeader id={`${props.id}-header`}>
-        <img
-          src={`${props.imagesStorageUrl}images/favicon.ico`}
-          alt="company logo"
-          width="18"
-        />
+        <StyledToastIcon id={`${props.id}-icon`}>
+          <img
+            src={`${props.imagesStorageUrl}images/favicon.ico`}
+            alt="company logo"
+            width="18"
+          />
+        </StyledToastIcon>
+
         <strong className="ml-1 mr-auto">{alert?.headerText}</strong>
         <small className="ml-3">Just now</small>
       </StyledToastHeader>
