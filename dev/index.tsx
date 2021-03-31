@@ -1,20 +1,23 @@
+import { useAddAlert } from '@qbcart/eshop-local-db';
 import React, { FC } from 'react';
 import { render } from 'react-dom';
-import { showToast } from 'toast';
+import 'toast';
 
-interface Props {
-  showToast: (header: string, body: string, duration: number) => void;
-}
-
-const DevButton: FC<Props> = (props: Props) => {
+const DevButton: FC = () => {
+  const addAlert = useAddAlert(true);
   return (
     <button
       onClick={() =>
-        props.showToast(
-          'Cart',
-          '<span class="text-success">Item has been added to your cart</span>',
-          3.5
-        )
+        addAlert({
+          headerText: 'Cart',
+          // headerTextColor: 'red',
+          // headerBackgroundColor: 'yellow',
+          htmlBody: '<h6>Item has been added to your cart!</h6>'
+          // bodyTextColor: 'green',
+          // bodyBackgroundColor: 'skyblue',
+          // iconName: 'home',
+          // iconColor: 'pink'
+        })
       }
     >
       Show Toast
@@ -23,8 +26,5 @@ const DevButton: FC<Props> = (props: Props) => {
 };
 
 (function () {
-  render(
-    <DevButton showToast={showToast} />,
-    document.getElementById('dev-button')
-  );
+  render(<DevButton />, document.getElementById('dev-button'));
 })();

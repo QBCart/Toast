@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
@@ -18,6 +19,7 @@ module.exports = {
     'react': 'https://qbcdemo.z13.web.core.windows.net/deps/react.js',
     'react-dom': 'https://qbcdemo.z13.web.core.windows.net/deps/react-dom.js',
     'styled-components': 'https://qbcdemo.z13.web.core.windows.net/deps/styled-components.js',
+    '@qbcart/eshop-local-db': 'https://qbcdemo.z13.web.core.windows.net/eshop/localdb/index.js',
     'toast': './src/index'
   }
 };
