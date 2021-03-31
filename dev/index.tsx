@@ -9,7 +9,6 @@ const DevButton: FC = () => {
     <button
       onClick={() =>
         addAlert({
-          type: 'toast',
           headerText: 'Cart',
           htmlBody:
             '<span class="text-success">Item has been added to your cart</span>'
