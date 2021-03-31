@@ -6,8 +6,8 @@
  * LICENSE file in the root directory of this source repo.
  */
 
-import React, { FC, useEffect } from 'react';
-import { useAlerts } from '@qbcart/eshop-local-db';
+import React, { FC, useEffect, useState, createRef } from 'react';
+import { useAlerts, useRemoveAlert } from '@qbcart/eshop-local-db';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
 import StyledToastHeader from './styled-components/styled-toast-header.js';
@@ -18,20 +18,49 @@ interface Props {
 }
 
 const Toast: FC<Props> = (props: Props) => {
+  const ref = createRef<HTMLDivElement>();
   const alerts = useAlerts(true);
+  const [alert, setAlert] = useState(
+    (alerts?.length ?? 0) > 0 ? alerts[0] : undefined
+  );
+  const removeAlert = useRemoveAlert(true);
+
   useEffect(() => {
-    const toast = document.getElementById(`${props.id}-content`)!;
-    toast.addEventListener('animationend', () => {
-      toast.style.animationName = '';
-    });
-  }, [props.id]);
+    if ((alerts?.length ?? 0) > 0) {
+      setAlert((alert) => {
+        if (alert?.id === alerts[0].id) return alert;
+        else return alerts[0];
+      });
+    }
+  }, [alerts]);
+
+  useEffect(() => {
+    if (alert) {
+      const toast = ref.current!;
+      toast.style.animationName = 'var(--toastSlideRight)';
+      toast.style.animationDuration = `${
+        (alert.duration ?? 0) > 0 ? alert.duration : 2
+      }s`;
+    }
+  }, [alert, ref]);
+
+  const onAnimationEnd = async (): Promise<void> => {
+    const toast = ref.current!;
+    toast.style.animationName = '';
+
+    if (alert) {
+      removeAlert(alert.id!);
+      setAlert(undefined);
+    }
+  };
 
   return (
     <StyledToast
-      id={`${props.id}-content`}
+      ref={ref}
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
+      onAnimationEnd={() => onAnimationEnd()}
     >
       <StyledToastHeader id={`${props.id}-header`}>
         <img
@@ -39,10 +68,12 @@ const Toast: FC<Props> = (props: Props) => {
           alt="company logo"
           width="18"
         />
-        <strong className="ml-1 mr-auto"></strong>
+        <strong className="ml-1 mr-auto">{alert?.headerText}</strong>
         <small className="ml-3">Just now</small>
       </StyledToastHeader>
-      <StyledToastBody id={`${props.id}-body`}></StyledToastBody>
+      <StyledToastBody
+        dangerouslySetInnerHTML={{ __html: alert?.htmlBody ?? '' }}
+      ></StyledToastBody>
     </StyledToast>
   );
 };
