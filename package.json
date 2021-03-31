@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@qbcart/eshop-local-db": "^1.1.0",
-    "@qbcart/types": "^1.2.1",
+    "@qbcart/types": "^2.0.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",
