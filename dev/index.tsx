@@ -10,8 +10,13 @@ const DevButton: FC = () => {
       onClick={() =>
         addAlert({
           headerText: 'Cart',
-          htmlBody:
-            '<span class="text-success">Item has been added to your cart</span>'
+          // headerTextColor: 'red',
+          // headerBackgroundColor: 'yellow',
+          htmlBody: '<h6>Item has been added to your cart!</h6>'
+          // bodyTextColor: 'green',
+          // bodyBackgroundColor: 'skyblue',
+          // iconName: 'home',
+          // iconColor: 'pink'
         })
       }
     >
