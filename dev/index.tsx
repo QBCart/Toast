@@ -1,30 +1,38 @@
-import { useAddAlert } from '@qbcart/eshop-local-db';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { render } from 'react-dom';
+import { useAddToastAlert } from '@qbcart/eshop-alert-hooks';
 import 'toast';
 
-const DevButton: FC = () => {
-  const addAlert = useAddAlert(true);
+const ToastTest: FC = () => {
+  const addAlert = useAddToastAlert();
+  const [message, setMessage] = useState('');
   return (
-    <button
-      onClick={() =>
-        addAlert({
-          headerText: 'Cart',
-          // headerTextColor: 'red',
-          // headerBackgroundColor: 'yellow',
-          htmlBody: '<h6>Item has been added to your cart!</h6>'
-          // bodyTextColor: 'green',
-          // bodyBackgroundColor: 'skyblue',
-          // iconName: 'home',
-          // iconColor: 'pink'
-        })
-      }
-    >
-      Show Toast
-    </button>
+    <div className="m-5">
+      <input
+        className="form-control w-25 mb-3"
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button
+        className="btn btn-outline-success mr-3"
+        onClick={() =>
+          addAlert({
+            headerText: 'Cart',
+            // headerTextColor: 'red',
+            // headerBackgroundColor: 'yellow',
+            htmlBody: `<h6>${message}</h6>`
+            // bodyTextColor: 'green',
+            // bodyBackgroundColor: 'skyblue',
+            // iconName: 'home',
+            // iconColor: 'pink'
+          })
+        }
+      >
+        Show Toast
+      </button>
+    </div>
   );
 };
 
 (function () {
-  render(<DevButton />, document.getElementById('dev-button'));
+  render(<ToastTest />, document.getElementById('toast-test'));
 })();
