@@ -6,8 +6,8 @@
  * LICENSE file in the root directory of this source repo.
  */
 
-import React, { FC, useEffect, useState, createRef } from 'react';
-import { useAlerts, useRemoveAlert } from '@qbcart/eshop-local-db';
+import React, { FC, useEffect, createRef } from 'react';
+import { useToastAlert, useRemoveToastAlert } from '@qbcart/eshop-alert-hooks';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
 import StyledToastHeader from './styled-components/styled-toast-header.js';
@@ -20,20 +20,8 @@ interface Props {
 
 const Toast: FC<Props> = (props: Props) => {
   const ref = createRef<HTMLDivElement>();
-  const alerts = useAlerts(true);
-  const [alert, setAlert] = useState(
-    (alerts?.length ?? 0) > 0 ? alerts[0] : undefined
-  );
-  const removeAlert = useRemoveAlert(true);
-
-  useEffect(() => {
-    if ((alerts?.length ?? 0) > 0) {
-      setAlert((alert) => {
-        if (alert?.id === alerts[0].id) return alert;
-        else return alerts[0];
-      });
-    }
-  }, [alerts]);
+  const alert = useToastAlert();
+  const removeAlert = useRemoveToastAlert();
 
   useEffect(() => {
     if (alert) {
@@ -60,7 +48,7 @@ const Toast: FC<Props> = (props: Props) => {
         }">${alert.iconName}</span>`;
       }
     }
-  }, [alert, ref, props]);
+  }, [alert, props]);
 
   const onAnimationEnd = async (): Promise<void> => {
     const toast = ref.current!;
@@ -68,7 +56,6 @@ const Toast: FC<Props> = (props: Props) => {
 
     if (alert) {
       removeAlert(alert.id!);
-      setAlert(undefined);
     }
   };
 
