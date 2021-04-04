@@ -2,7 +2,7 @@
 
 ### New
 
-- none
+- Toast component used across the QBCart EShop ecosystem. (Previous versions published as @qbcart/toast.)
 
 ### Fixes
 
