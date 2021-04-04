@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source repo.
  */
 
-import React, { FC, useEffect, createRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { useToastAlert, useRemoveToastAlert } from '@qbcart/eshop-alert-hooks';
 import StyledToast from './styled-components/styled-toast.js';
 import StyledToastBody from './styled-components/styled-toast-body.js';
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const Toast: FC<Props> = (props: Props) => {
-  const ref = createRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
   const alert = useToastAlert();
   const removeAlert = useRemoveToastAlert();
 
@@ -48,7 +48,7 @@ const Toast: FC<Props> = (props: Props) => {
         }">${alert.iconName}</span>`;
       }
     }
-  }, [alert, props]);
+  }, [alert, props, ref]);
 
   const onAnimationEnd = async (): Promise<void> => {
     const toast = ref.current!;
