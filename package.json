@@ -1,7 +1,7 @@
 {
   "name": "@qbcart/eshop-toast",
   "version": "1.0.0",
-  "description": "Toast component used across the QBCart EShop ecosystem.",
+  "description": "Types for Toast component used across the QBCart EShop ecosystem.",
   "keywords": [
     "types",
     "qbcart",
