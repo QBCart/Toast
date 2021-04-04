@@ -31,20 +31,20 @@ const Toast: FC<Props> = (props: Props) => {
         (alert.duration ?? 0) > 0 ? alert.duration : 2
       }s`;
       toast.style.backgroundColor =
-        alert.bodyBackgroundColor ?? 'rgba(255, 255, 255, 0.85)';
-      toast.style.color = alert.bodyTextColor ?? 'black';
+        alert.bodyBackgroundColor || 'rgba(255, 255, 255, 0.85)';
+      toast.style.color = alert.bodyTextColor || 'black';
 
       const header = toast.querySelector<HTMLDivElement>(
         `#${props.id}-header`
       )!;
-      header.style.color = alert.headerTextColor ?? '#6c757d';
+      header.style.color = alert.headerTextColor || '#6c757d';
       header.style.backgroundColor =
-        alert.headerBackgroundColor ?? 'rgba(255, 255, 255, 0.85)';
+        alert.headerBackgroundColor || 'rgba(255, 255, 255, 0.85)';
 
       if (alert.iconName) {
         const icon = toast.querySelector<HTMLDivElement>(`#${props.id}-icon`)!;
         icon.innerHTML = `<span class="material-icons" style="margin-top: -1px; color: ${
-          alert.iconColor ?? '#6c757d'
+          alert.iconColor || '#6c757d'
         }">${alert.iconName}</span>`;
       }
     }
