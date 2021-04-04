@@ -15,7 +15,7 @@ const ToastTest: FC = () => {
   const [iconColor, setIconColor] = useState('');
 
   return (
-    <form className="m-5">
+    <form onSubmit={(e) => e.preventDefault()} className="m-5">
       <ul className="nav nav-tabs" id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
           <a
