@@ -72,10 +72,10 @@ jobs:
         shell: bash
         run: npm run build
 
-      ###############
-      # Build Types #
-      ###############
-      - name: Build Types
+      #############
+      # Run Tests #
+      #############
+      - name: Run Tests
         working-directory: .
         shell: bash
-        run: npm run build:types
+        run: npm run test:ci
