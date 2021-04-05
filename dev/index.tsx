@@ -13,6 +13,7 @@ const ToastTest: FC = () => {
   const [bodyBackgroundColor, setBodyBackgroundColor] = useState('');
   const [iconName, setIconName] = useState('');
   const [iconColor, setIconColor] = useState('');
+  const [duration, setDuration] = useState(0);
 
   return (
     <form onSubmit={(e) => e.preventDefault()} className="m-5">
@@ -54,6 +55,19 @@ const ToastTest: FC = () => {
             aria-selected="false"
           >
             Icon
+          </a>
+        </li>
+        <li className="nav-item" role="presentation">
+          <a
+            className="nav-link"
+            id="duration-tab"
+            data-toggle="tab"
+            href="#duration"
+            role="tab"
+            aria-controls="duration"
+            aria-selected="false"
+          >
+            Duration
           </a>
         </li>
       </ul>
@@ -148,6 +162,22 @@ const ToastTest: FC = () => {
             />
           </div>
         </div>
+        <div
+          className="tab-pane fade"
+          id="duration"
+          role="tabpanel"
+          aria-labelledby="duration-tab"
+        >
+          <div className="form-group">
+            <label htmlFor="durationInput">Seconds</label>
+            <input
+              id="durationInput"
+              type="number"
+              className="form-control w-25 mb-3"
+              onChange={(e) => setDuration(Number(e.target.value))}
+            />
+          </div>
+        </div>
       </div>
 
       <button
@@ -161,7 +191,8 @@ const ToastTest: FC = () => {
             bodyTextColor,
             bodyBackgroundColor,
             iconName,
-            iconColor
+            iconColor,
+            duration: duration
           })
         }
       >
