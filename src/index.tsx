@@ -12,7 +12,7 @@ import Toast from './toast.js';
 
 (function () {
   const id = 'qbc-toast';
-  const toast = document.getElementById(id);
+  const mountingDiv = document.getElementById(id);
   render(
     <Toast
       id={id}
@@ -20,6 +20,6 @@ import Toast from './toast.js';
         document.getElementById('qbc-images')!.dataset.imagesStorageUrl!
       }
     />,
-    toast
+    mountingDiv
   );
 })();
