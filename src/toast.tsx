@@ -35,7 +35,7 @@ const Toast: FC<Props> = (props: Props) => {
         (alert.duration ?? 0) > 0 ? alert.duration : 2
       }s`;
     }
-  }, [alert, props, ref]);
+  }, [alert, ref]);
 
   /*
    *  Animation must be unset onAnimationEnd to function properly.
