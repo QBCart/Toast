@@ -10,13 +10,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import Toast from './toast.js';
 
-(function () {
-  render(
-    <Toast
-      imagesStorageUrl={
-        document.getElementById('qbc-images')!.dataset.imagesStorageUrl!
-      }
-    />,
-    document.getElementById('qbc-toast')
-  );
-})();
+render(
+  <Toast
+    imagesStorageUrl={
+      document.getElementById('qbc-images')!.dataset.imagesStorageUrl!
+    }
+  />,
+  document.getElementById('qbc-toast')
+);

@@ -202,6 +202,4 @@ const ToastTest: FC = () => {
   );
 };
 
-(function () {
-  render(<ToastTest />, document.getElementById('toast-test'));
-})();
+render(<ToastTest />, document.getElementById('toast-test'));
