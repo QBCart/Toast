@@ -15,7 +15,6 @@ import StyledToastIcon from './styled-components/styled-toast-icon.js';
 import type { CSSProperties } from 'styled-components';
 
 interface Props {
-  // id: string;
   imagesStorageUrl: string;
 }
 
