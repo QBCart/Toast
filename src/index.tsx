@@ -11,15 +11,12 @@ import { render } from 'react-dom';
 import Toast from './toast.js';
 
 (function () {
-  const id = 'qbc-toast';
-  const mountingDiv = document.getElementById(id);
   render(
     <Toast
-      id={id}
       imagesStorageUrl={
         document.getElementById('qbc-images')!.dataset.imagesStorageUrl!
       }
     />,
-    mountingDiv
+    document.getElementById('qbc-toast')
   );
 })();
