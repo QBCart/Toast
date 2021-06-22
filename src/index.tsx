@@ -11,11 +11,20 @@ import { render } from 'react-dom';
 
 import Toast from './toast/index.js';
 
+const globalMountsContainer = document.getElementById(
+  'qbc-eshop-global-mounts'
+)!;
+const mountingDiv = document.createElement('div');
+
+mountingDiv.id = 'qbc-eshop-toast';
+globalMountsContainer.appendChild(mountingDiv);
+
 render(
   <Toast
     imagesStorageUrl={
-      document.getElementById('qbc-images')!.dataset.imagesStorageUrl!
+      document.getElementById('qbc-eshop-company-settings')!.dataset
+        .imagesStorageUrl!
     }
   />,
-  document.getElementById('qbc-toast')
+  mountingDiv
 );
