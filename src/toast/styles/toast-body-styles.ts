@@ -8,12 +8,10 @@
 
 import styled from 'styled-components';
 
-const StyledToastIcon = styled.div`
-  height: 18px;
-  width: 18px;
-  font-size: 0.875rem;
-  margin-right: 5px;
-  margin-bottom: 5px;
+const ToastBodyStyles = styled.div`
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem;
 `;
 
-export default StyledToastIcon;
+export default ToastBodyStyles;

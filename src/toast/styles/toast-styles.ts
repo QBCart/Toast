@@ -28,7 +28,7 @@ const ToastSlideRight = keyframes`
   }
 `;
 
-const StyledToast = styled.div`
+const ToastStyles = styled.div`
   --toastSlideRight: ${ToastSlideRight};
   -ms-flex-preferred-size: 350px;
   flex-basis: 350px;
@@ -48,4 +48,4 @@ const StyledToast = styled.div`
   animation-delay: 1s;
 `;
 
-export default StyledToast;
+export default ToastStyles;

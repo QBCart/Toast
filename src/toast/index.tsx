@@ -8,11 +8,12 @@
 
 import React, { FC, useEffect, useRef } from 'react';
 import { useToastAlert, useRemoveToastAlert } from '@qbcart/eshop-alert-hooks';
-import StyledToast from './styled-components/styled-toast.js';
-import StyledToastBody from './styled-components/styled-toast-body.js';
-import StyledToastHeader from './styled-components/styled-toast-header.js';
-import StyledToastIcon from './styled-components/styled-toast-icon.js';
 import type { CSSProperties } from 'styled-components';
+
+import ToastStyles from './styles/toast-styles.js';
+import ToastBodyStyles from './styles/toast-body-styles.js';
+import ToastHeaderStyles from './styles/toast-header-styles.js';
+import ToastIconStyles from './styles/toast-icon-styles.js';
 
 interface Props {
   imagesStorageUrl: string;
@@ -64,7 +65,7 @@ const Toast: FC<Props> = (props: Props) => {
   };
 
   return (
-    <StyledToast
+    <ToastStyles
       ref={ref}
       style={toastStyle}
       role="alert"
@@ -72,8 +73,8 @@ const Toast: FC<Props> = (props: Props) => {
       aria-atomic="true"
       onAnimationEnd={() => onAnimationEnd()}
     >
-      <StyledToastHeader style={headerStyle}>
-        <StyledToastIcon>
+      <ToastHeaderStyles style={headerStyle}>
+        <ToastIconStyles>
           {alert?.iconName ? (
             <span className="material-icons" style={iconStyle}>
               {alert.iconName}
@@ -85,15 +86,15 @@ const Toast: FC<Props> = (props: Props) => {
               width="18"
             />
           )}
-        </StyledToastIcon>
+        </ToastIconStyles>
 
         <strong className="ml-1 mr-auto">{alert?.headerText}</strong>
         <small className="ml-3">Just now</small>
-      </StyledToastHeader>
-      <StyledToastBody
+      </ToastHeaderStyles>
+      <ToastBodyStyles
         dangerouslySetInnerHTML={{ __html: alert?.htmlBody ?? '' }}
-      ></StyledToastBody>
-    </StyledToast>
+      ></ToastBodyStyles>
+    </ToastStyles>
   );
 };
 

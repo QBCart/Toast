@@ -8,7 +8,8 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import Toast from './toast.js';
+
+import Toast from './toast/index.js';
 
 render(
   <Toast

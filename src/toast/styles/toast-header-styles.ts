@@ -8,7 +8,7 @@
 
 import styled from 'styled-components';
 
-const StyledToastHeader = styled.div`
+const ToastHeaderStyles = styled.div`
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -20,4 +20,4 @@ const StyledToastHeader = styled.div`
   border-top-right-radius: calc(0.25rem - 1px);
 `;
 
-export default StyledToastHeader;
+export default ToastHeaderStyles;
