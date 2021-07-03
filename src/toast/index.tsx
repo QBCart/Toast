@@ -88,8 +88,8 @@ const Toast: FC<Props> = (props: Props) => {
           )}
         </ToastIconStyles>
 
-        <strong className="ml-1 mr-auto">{alert?.headerText}</strong>
-        <small className="ml-3">Just now</small>
+        <strong className="title">{alert?.headerText}</strong>
+        <small className="timing">Just now</small>
       </ToastHeaderStyles>
       <ToastBodyStyles
         dangerouslySetInnerHTML={{ __html: alert?.htmlBody ?? '' }}

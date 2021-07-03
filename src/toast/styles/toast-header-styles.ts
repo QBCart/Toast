@@ -18,6 +18,12 @@ const ToastHeaderStyles = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  .title {
+    margin-left: 0.25rem !important;
+  }
+  .timing {
+    margin-left: auto;
+  }
 `;
 
 export default ToastHeaderStyles;
